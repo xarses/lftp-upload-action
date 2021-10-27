@@ -28,7 +28,7 @@ Force LFTP to only connect with TLS/SSL (default: false). This causes LFTP to ab
 ### `ssl_priority` (optional)
 Cipher priority string to pass to gnutls (default: ""). In some strange cases, you may need to set these to extend compatibility with normally disabled ciphers. If you need generic compat, Set to `NORMAL:%COMPAT:+VERS-TLS1.0` 
 
-### `args` (optional)
+### `mirror_args` (optional)
 Any additional arguments to pass to the mirror command (default: "")
 
 ### `local_path`

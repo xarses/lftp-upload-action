@@ -24,7 +24,7 @@ inputs:
   ssl_priority:
     description: "Cipher priorty string to pass to gnutls. (Set to 'NORMAL:%COMPAT:+VERS-TLS1.0' if you need compat)"
     default: ""
-  args:
+  mirror_args:
     description: "Additional arguments to pass to LFTP mirror command"
   local_path:
     description: "the local path to upload from the deployment repo"

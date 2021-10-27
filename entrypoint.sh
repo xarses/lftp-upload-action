@@ -18,7 +18,7 @@ fi
 #REMOTE_PATH
 #LOCAL_PATH
 
-INPUT_ARGS=${INPUT_ARGS}
+ARGS="${INPUT_MIRROR_ARGS}"
 
 lftp $URI <<- TRANSFER
     set ssl:priority ${INPUT_SSL_PRIORITY}
@@ -27,5 +27,5 @@ lftp $URI <<- TRANSFER
     user $INPUT_USERNAME $INPUT_PASSWORD
 
     #--reverse sends file to the server from the LOCAL_PATH
-    mirror --verbose --reverse $INPUT_ARGS $INPUT_LOCAL_PATH $INPUT_REMOTE_PATH
+    mirror --verbose --reverse $ARGS $INPUT_LOCAL_PATH $INPUT_REMOTE_PATH
 TRANSFER
