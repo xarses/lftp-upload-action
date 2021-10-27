@@ -1,35 +1,35 @@
 name: "LFTP deploy action"
 description: "Deploy a set of files via LFTP (supports FTPS)"
 inputs:
-  HOST:
+  host:
     description: "Host to connect to"
     required: true
-  PORT:
+  port:
     description: "Port used by the host"
-  PROTOCOL:
+  protocol:
     description: "Protocol to connect with"
     default: "ftp"
-  USERNAME:
+  username:
     description: "login username"
     required: true
-  PASSWORD:
+  password:
     description: "login password"
     required: true
-  SSL_VERIFY_CERT:
+  ssl_verify_cert:
     description: "Should the host's x509 SSL certificate be verified"
     default: true
-  SSL_FORCE:
+  ssl_force:
     description: "Should SSL be manditory (prevents non TLS/SSL fallback if HELO said it was an option)"
     default: false
-  SSL_PRIORITY:
+  ssl_priority:
     description: "Cipher priorty string to pass to gnutls. (Set to 'NORMAL:%COMPAT:+VERS-TLS1.0' if you need compat)"
     default: ""
-  ARGS:
+  args:
     description: "Additional arguments to pass to LFTP mirror command"
-  LOCAL_PATH:
+  local_path:
     description: "the local path to upload from the deployment repo"
     required: true
-  REMOTE_PATH:
+  remote_path:
     description: "the path to upload the files to on the remote host"
     required: true
 runs:
