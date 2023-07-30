@@ -12,6 +12,10 @@ if [ ! -n $INPUT_PORT ]; then
     URI=$URI:$INPUT_PORT
 fi
 
+if [ $INPUT_SSL_VERIFY_CERT != "true" ]; then
+    SSH_ARGS="set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'"
+fi
+
 #USERNAME
 #PASSWORD
 #ARGS
@@ -24,6 +28,7 @@ lftp $URI <<- TRANSFER
     set ssl:priority ${INPUT_SSL_PRIORITY}
     set ssl:verify-certificate ${INPUT_SSL_VERIFY_CERT}
     set ftp:ssl-force ${INPUT_SSL_FORCE}
+    ${SSH_ARGS}
     user $INPUT_USERNAME $INPUT_PASSWORD
 
     #--reverse sends file to the server from the LOCAL_PATH

@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk --no-cache add lftp
+RUN apk --no-cache add lftp openssh-client
 
 COPY entrypoint.sh /entrypoint.sh
 
